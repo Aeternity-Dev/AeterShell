@@ -4,14 +4,15 @@
 //    ██╔══██║██╔══╝     ██║   ██╔══╝  ██╔══██╗
 //    ██║  ██║███████╗   ██║   ███████╗██║  ██║
 //    ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
-//                                             
+//                       
+// Hello everyone
+
 
 import Quickshell
 import qs.Modules
 
 ShellRoot {
   id: aetershell
-
-  // Define
+  // Define the bar
   Bar {}
 }

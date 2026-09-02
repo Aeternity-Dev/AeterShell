@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Layouts
 import Quickshell
 import qs.Theme
 import qs.Services
@@ -6,11 +7,6 @@ import qs.Services
 Scope {
     id: bar
     readonly property int height: 20
-
-    // SystemClock {
-    //     id: clock
-    //     precision: SystemClock.Seconds
-    // }
 
     Variants {
         model: Quickshell.screens
@@ -28,11 +24,30 @@ Scope {
                 implicitHeight: bar.height
                 color: Colors.background
 
+                RowLayout {
+                    anchors {
+                        verticalCenter: parent.verticalCenter
+                    }
+                }
+                
                 Text {
                     anchors.centerIn: parent
                     text: Clock.time
                     color: Colors.text
-                    font: Typography.sans(6)
+                    font: Typography.sans(6, Font.Medium)
+                }
+
+                RowLayout {
+                    anchors {
+                        right: parent.right
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    Text {
+                        text: Battery.percentage + "%"
+                        color: Colors.text
+                        font: Typography.sans(6, Font.Medium)
+                    }
                 }
             }
         }
